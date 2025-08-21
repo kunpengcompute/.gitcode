@@ -1,0 +1,131 @@
+name: 缺陷
+description: 当您发现了一个缺陷，需要向社区反馈时，请使用此模板。
+title: "[Bug]: "
+labels: ["bug"]
+type: "缺陷"
+body:
+  - type: markdown
+    attributes:
+      value: |
+      # 请认真填写以下信息，否则可能由于无法定位，导致issue无法解决而被取消
+
+  - type: dropdown
+    id: test_type
+    attributes:
+      label: "测试类型"
+      multiple: true
+      options:
+        - SQL功能
+        - 存储功能
+        - 接口功能
+        - 工具功能
+        - 性能
+        - 并发
+        - 压力长稳
+        - 故障注入
+        - 安全
+        - 资料
+        - 编码规范
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: 测试版本
+      options:
+        - 3.0.0
+        - 5.0.0
+        - 6.0.0
+        - 7.0.0-RC1
+        - 7.0.0-RC2
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 问题描述
+      placeholder: "描述你遇到的问题"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 操作系统和硬件信息
+      description:
+      placeholder: "查询命令: cat /etc/system-release, uname -a"
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: 测试环境
+      options:
+        - 企业版单机
+        - 企业版主备
+        - 企业版双中心、三中心
+        - 极简版
+        - 轻量版服务器安装
+        - 轻量版容器化
+        - 资源池化
+        - 资源池化双集群
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 被测功能
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 预置条件
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 操作步骤
+      description: 请填写详细的操作步骤，或可在下方截图中完整体现
+      placeholder: "\nstep1. \n"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 预期输出
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 实际输出
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 日志信息
+      description: 请附上日志文件、截图、coredump信息
+      placeholder: "日志文件、截图或coredump信息"
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: 提单组织
+      options:
+        - 社区用户
+        - 联合伙伴
+        - 内部测试
+        - 内部开发
+        - 高斯
+        - 一线客户
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 测试代码
+    validations:
+      required: false
