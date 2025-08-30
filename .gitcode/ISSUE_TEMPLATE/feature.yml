@@ -1,6 +1,6 @@
-name: 特性
+name: 需求
 description: 需要反馈或实现一个新特性时，使用此模板。
-title: "[特性]: "
+title: "[需求]: "
 labels: ["enhancement"]
 type: "特性"
 body:
