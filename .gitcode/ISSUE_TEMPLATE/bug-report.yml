@@ -15,8 +15,6 @@ body:
       label: "测试类型"
       multiple: true
       options:
-        - SQL功能
-        - 存储功能
         - 接口功能
         - 工具功能
         - 性能
