@@ -7,7 +7,8 @@ body:
   - type: markdown
     attributes:
       value: |
-      # 请认真填写以下信息，否则可能由于无法定位，导致issue无法解决而被取消
+       ## 感谢您的报告！
+       请认真填写以下信息，否则可能由于无法定位，导致issue无法解决而被取消。
 
   - type: dropdown
     id: test_type
@@ -15,12 +16,13 @@ body:
       label: "测试类型"
       multiple: true
       options:
-        - 接口功能
-        - 工具功能
+        - 功能
         - 性能
-        - 并发
-        - 压力长稳
-        - 故障注入
+        - 可靠性
+        - 长稳
+        - 兼容性
+        - 易用性
+        - 可测试性
         - 安全
         - 资料
         - 编码规范
@@ -31,80 +33,104 @@ body:
     attributes:
       label: 测试版本
       options:
-        - 3.0.0
-        - 5.0.0
-        - 6.0.0
-        - 7.0.0-RC1
-        - 7.0.0-RC2
+        - BoostKit 25.3.0
+        - BoostKit 26.1.0
+        - BoostKit 26.2.0
+        - BoostKit 26.3.0
     validations:
       required: true
 
   - type: textarea
     attributes:
       label: 问题描述
-      placeholder: "描述你遇到的问题"
+      placeholder: "详细描述你遇到的问题"
     validations:
       required: false
 
   - type: textarea
     attributes:
-      label: 操作系统和硬件信息
+      label: 操作系统及内核信息
       description:
-      placeholder: "查询命令: cat /etc/system-release, uname -a"
+      placeholder:
+         "
+         1、【缺陷所属的os版本】（如openEuler-22.03-LTS，参考命令：cat /etc/os-release 结果）
+         2、【内核版本】（如kernel-5.10.0-60.138.0.165，参考命令 uname -r 结果）
+           "
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 硬件及组网信息
+      description:
+      placeholder:
+          "
+          1、提供跟硬件相关的信息，如架构、cpu、内存规格、磁盘信息等；虚拟机场景，额外补充宿主机os版本类型
+          2、组网信息：单机/xx节点集群，- 如果有特殊组网，请提供网络拓扑信息以及网络数据走向
+          "
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 软件信息
+      description:
+      placeholder:
+          " 跟缺陷所属软件相关的版本信息（如软件包构版本、编译器版本等依赖软件版本）"
     validations:
       required: true
 
   - type: dropdown
     attributes:
-      label: 测试环境
+      label: 出现概率
       options:
-        - 企业版单机
-        - 企业版主备
-        - 企业版双中心、三中心
-        - 极简版
-        - 轻量版服务器安装
-        - 轻量版容器化
-        - 资源池化
-        - 资源池化双集群
+        - 有条件必然重现
+        - 有条件概率重现
+        - 无规律重现
+        - 很难重现
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: 被测功能
+      label: 问题复现步骤
+      description: 请填写详细的操作步骤，并附上对应截图
+      placeholder:
+        " 请描述具体的操作步骤，并附上对应截图
+         步骤1：
+         步骤2："
     validations:
       required: false
 
   - type: textarea
     attributes:
-      label: 预置条件
+      label: 预期结果
+      description:
+      placeholder:
+        " 请描述出预期的结果和影响
+        预期1：
+        预期2：
+        "
     validations:
       required: false
 
-  - type: textarea
-    attributes:
-      label: 操作步骤
-      description: 请填写详细的操作步骤，或可在下方截图中完整体现
-      placeholder: "\nstep1. \n"
-    validations:
-      required: true
 
   - type: textarea
     attributes:
-      label: 预期输出
+      label: 实际结果
+      description:
+      placeholder:
+        " 请描述出实际的结果和影响
+        实际结果1：
+        实际2：
+        "
     validations:
       required: false
-
-  - type: textarea
-    attributes:
-      label: 实际输出
-    validations:
-      required: true
 
   - type: textarea
     attributes:
       label: 日志信息
-      description: 请附上日志文件、截图、coredump信息
+      description: 请附上日志文件、截图信息
       placeholder: "日志文件、截图或coredump信息"
     validations:
       required: true
@@ -117,7 +143,6 @@ body:
         - 联合伙伴
         - 内部测试
         - 内部开发
-        - 高斯
         - 一线客户
     validations:
       required: true
@@ -125,5 +150,7 @@ body:
   - type: textarea
     attributes:
       label: 测试代码
+      description: 请附上测试代码
+      placeholder: "问题出现时的测试代码信息"
     validations:
-      required: false
+      required: true
