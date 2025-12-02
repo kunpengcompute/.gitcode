@@ -40,6 +40,18 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    attributes:
+      label: 严重级别
+      options:
+        - Serious
+        - Main
+        - Secondary
+        - Optional
+        - No priority
+    validations:
+      required: true
+
   - type: textarea
     attributes:
       label: 问题描述
@@ -153,4 +165,4 @@ body:
       description: 请附上测试代码
       placeholder: "问题出现时的测试代码信息"
     validations:
-      required: true
+      required: false
