@@ -34,6 +34,7 @@ body:
       label: 测试版本
       options:
         - BoostKit 25.3.0
+        - BoostKit 26.0.0
         - BoostKit 26.1.0
         - BoostKit 26.2.0
         - BoostKit 26.3.0
