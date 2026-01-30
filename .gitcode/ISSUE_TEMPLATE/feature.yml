@@ -1,5 +1,5 @@
 name: 需求
-description: 需要反馈或实现一个新特性时，使用此模板。
+description: 需要反馈或实现一个新功能或优化时，使用此模板。
 title: "[需求]: "
 labels: ["enhancement"]
 type: "特性"
@@ -7,23 +7,24 @@ body:
   - type: markdown
     attributes:
       value: |
-        感谢提出新特性。
+        感谢提出新需求。
   - type: textarea
     attributes:
-      label: 需求背景
+      label: 【需求背景】
+      description: 说明该需求来源及为什么做该需求等背景信息，以便对该需求有较为全面的理解
     validations:
-      required: false
+      required: true
 
   - type: textarea
     attributes:
-      label: 特性描述
-      description: 请详细说明特性需要做什么事情，达成什么样的效果
+      label: 【需求描述】
+      description: 详细说明该需求需要实现的功能和要达成的效果
       placeholder: "需要做的事情，期望达成的效果..."
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: 其他说明
+      label: 【其他说明】
     validations:
       required: false
