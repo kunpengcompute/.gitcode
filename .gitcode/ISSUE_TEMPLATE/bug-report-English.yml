@@ -1,0 +1,169 @@
+name: Bug
+description: Please use this template when you discover a bug and need to report it to the community.
+title: "[Bug]: "
+labels: ["bug"]
+type: "Bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ## Thank you for your report!
+       Please fill in the following information carefully, otherwise the issue may be closed due to inability to locate the problem.
+
+  - type: dropdown
+    id: test_type
+    attributes:
+      label: "Test Type"
+      multiple: true
+      options:
+        - Functionality
+        - Performance
+        - Reliability
+        - Long-term Stability
+        - Compatibility
+        - Usability
+        - Testability
+        - Security
+        - Documentation
+        - Coding Standards
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Test Version
+      options:
+        - BoostKit 25.3.0
+        - BoostKit 26.0.0
+        - BoostKit 26.1.0
+        - BoostKit 26.2.0
+        - BoostKit 26.3.0
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Severity Level
+      options:
+        - Serious
+        - Main
+        - Secondary
+        - Optional
+        - No priority
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Problem Description
+      placeholder: "Describe the problem you encountered in detail"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Operating System and Kernel Information
+      description:
+      placeholder:
+         "
+         1. [OS version where the bug occurs] (e.g., openEuler-22.03-LTS, reference command: cat /etc/os-release result)
+         2. [Kernel version] (e.g., kernel-5.10.0-60.138.0.165, reference command: uname -r result)
+           "
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Hardware and Network Information
+      description:
+      placeholder:
+          "
+          1. Provide hardware-related information, such as architecture, CPU, memory specifications, disk information, etc. For virtual machine scenarios, also provide the host OS version type.
+          2. Network information: standalone/xx-node cluster. If there is a special network configuration, please provide network topology information and network data flow.
+          "
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Software Information
+      description:
+      placeholder:
+          " Version information related to the software where the bug occurs (e.g., software package version, compiler version, and other dependent software versions) "
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Reproduction Probability
+      options:
+        - Always reproducible under certain conditions
+        - Probabilistically reproducible under certain conditions
+        - Randomly reproducible
+        - Very difficult to reproduce
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide detailed operation steps and attach corresponding screenshots
+      placeholder:
+        " Please describe the specific operation steps and attach corresponding screenshots
+         Step 1:
+         Step 2:"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Expected Result
+      description:
+      placeholder:
+        " Please describe the expected results and impacts
+        Expected 1:
+        Expected 2:
+        "
+    validations:
+      required: false
+
+
+  - type: textarea
+    attributes:
+      label: Actual Result
+      description:
+      placeholder:
+        " Please describe the actual results and impacts
+        Actual result 1:
+        Actual result 2:
+        "
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Log Information
+      description: Please attach log files and screenshot information
+      placeholder: "Log files, screenshots, or coredump information"
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Reporter Organization
+      options:
+        - Community User
+        - Joint Partner
+        - Internal Testing
+        - Internal Development
+        - Frontline Customer
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Test Code
+      description: Please attach the test code
+      placeholder: "Test code information when the problem occurred"
+    validations:
+      required: false

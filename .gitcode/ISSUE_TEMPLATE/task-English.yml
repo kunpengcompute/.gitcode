@@ -1,0 +1,57 @@
+name: "Task"
+description: "Submit a new task or requirement"
+labels: ["enhancement", "task"]
+title: "[Task]: "
+type: "Task"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing a new task to the project! Please provide detailed information following the prompts below so we can better understand and follow up.
+
+  - type: input
+    id: task_title
+    attributes:
+      label: "Task Title"
+      description: "Please provide a concise and clear title for the task."
+      placeholder: "e.g., Optimize database query speed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: task_description
+    attributes:
+      label: "Task Description"
+      description: "Please describe the task content, objectives, and expected outcomes in detail."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "Please select the priority of the task."
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_resources
+    attributes:
+      label: "Related Resources or References"
+      description: "Please list links, documents, or other resources related to the task (if applicable)."
+      placeholder: "e.g., [Performance Optimization Best Practices](https://example.com)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: "Additional Notes"
+      description: "Please add any other information that may help understand the task."
+      placeholder: "e.g., This task requires coordination with Team X."
+    validations:
+      required: false
