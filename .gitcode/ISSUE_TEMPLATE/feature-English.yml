@@ -1,0 +1,29 @@
+name: Feature Request
+description: Please use this template when you need to report or implement a new feature.
+title: "[Feature]: "
+labels: ["enhancement"]
+type: "Feature"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a new feature.
+  - type: textarea
+    attributes:
+      label: Feature Background
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Feature Description
+      description: Please describe in detail what the feature should do and what results it should achieve
+      placeholder: "What needs to be done, expected results..."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Notes
+    validations:
+      required: false
