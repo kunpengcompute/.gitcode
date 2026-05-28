@@ -1,0 +1,40 @@
+name: "代码检视"
+description: "需要对代码提交检视意见时，请使用此模板"
+labels: ["codereview"]
+title: "[代码检视]: "
+type: "代码检视"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您为项目贡献代码检视意见！请按照以下提示提供详细信息，以便我们更好地理解并跟进。
+
+  - type: input
+    id: review_title
+    attributes:
+      label: "检视意见标题"
+      description: "请为检视意见提供一个简洁明确的标题。"
+      placeholder: "例如：缺少空指针保护，可能导致NullPointerException"
+    validations:
+      required: true
+
+  - type: textarea
+    id: review_description
+    attributes:
+      label: "检视意见描述"
+      description: "请详细描述检视意见，包括具体的代码位置，问题，和建议的解决方案。"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "严重程度"
+      description: "请选择检视意见的严重程度。"
+      options:
+        - 致命
+        - 严重
+        - 一般
+        - 建议
+    validations:
+      required: true
