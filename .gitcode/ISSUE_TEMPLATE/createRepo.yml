@@ -28,8 +28,8 @@ body:
       placeholder: "例如: My Package for BoostKit"
     validations:
       required: true
-  
-    - type: textarea
+
+  - type: textarea
     id: repo_pr
     attributes:
       label: 建仓PR
@@ -48,8 +48,8 @@ body:
         - private
     validations:
       required: true
-  
-    - type: dropdown
+
+  - type: dropdown
     id: repo_type
     attributes:
       label: 仓库形态
@@ -61,7 +61,7 @@ body:
     validations:
       required: true
 
-    - type: dropdown
+  - type: dropdown
     id: repo_type
     attributes:
       label: 开源类型
