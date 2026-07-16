@@ -14,7 +14,7 @@ body:
   - type: input
     id: upstream
     attributes:
-      label: 上游仓库地址
+      label: 上游仓库地址(如无上游社区反馈不涉及)
       description: 上游仓库地址，格式如 https://gitcode.com/org/repo 或 https://github.com/org/repo
       placeholder: "例如: https://gitcode.com/upstream-org/upstream-repo"
     validations:
@@ -28,6 +28,15 @@ body:
       placeholder: "例如: My Package for BoostKit"
     validations:
       required: true
+  
+    - type: textarea
+    id: repo_pr
+    attributes:
+      label: 建仓PR
+      description: 请输入建仓PR链接
+      placeholder: "例如: https://gitcode.com/boostkit/community/pull/xxx"
+    validations:
+      required: true
 
   - type: dropdown
     id: repo_type
@@ -37,6 +46,29 @@ body:
       options:
         - public
         - private
+    validations:
+      required: true
+  
+    - type: dropdown
+    id: repo_type
+    attributes:
+      label: 仓库形态
+      description: 选择仓库的类型
+      options:
+        - 源码仓
+        - 补丁仓
+        - 公共配置或工具仓
+    validations:
+      required: true
+
+    - type: dropdown
+    id: repo_type
+    attributes:
+      label: 开源类型
+      description: 选择仓库开源的类型
+      options:
+        - 主导开源
+        - 参与开源
     validations:
       required: true
 
@@ -55,15 +87,6 @@ body:
       label: 创建分支 1
       description: "提示：master 分支默认创建，无需填写。如需创建其他分支，请在以下输入框中填写，格式：分支名:来源分支（不指定来源分支时，默认源分支为 master）"
       placeholder: "例如: 分支1:master"
-    validations:
-      required: false
-
-  - type: input
-    id: branch_2
-    attributes:
-      label: 创建分支 2
-      description: 配置需要创建的分支（可选），格式：分支名:来源分支（不指定来源分支时，默认源分支为 master）
-      placeholder: "例如: 分支2:master"
     validations:
       required: false
 
