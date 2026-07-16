@@ -53,7 +53,7 @@ body:
     id: repo_type
     attributes:
       label: 仓库形态
-      description: 选择仓库的类型
+      description: 选择仓库的类型。(工具仓、benchmark、demo等选择公共配置或工具仓)
       options:
         - 源码仓
         - 补丁仓
@@ -69,6 +69,7 @@ body:
       options:
         - 主导开源
         - 参与开源
+        - NA
     validations:
       required: true
 
